@@ -1,0 +1,203 @@
+@font-face { font-family: 'JSDongkang-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+textarea {
+	resize: none;
+}
+
+.main {
+	position: relative;
+    height: 1000px;
+    margin-top: 70px;
+    width: 1200px;
+    margin: 70px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+th, td {
+    border-bottom: 1px solid #e3e3e380;
+    padding: 18px;
+}
+
+.listItem {
+	background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 85px auto;
+    box-shadow: 0px 6px 15px 5px #e3e3e394;
+    font-family: 'JSDongkang-Regular'; 
+}
+
+.pageContainer {
+	display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 600;
+	font-family: 'JSDongkang-Regular';
+}
+
+.pageContainer li {
+	margin: 0px 15px;
+}
+
+.listItem tr{
+	height: 50px;
+}
+
+.listItem th:nth-child(1) {
+	width: 13%;
+}
+
+.listItem th:nth-child(2) {
+	width: 45%;
+}
+
+.pageTitle{
+	font-size: 26px;
+    font-weight: 600;
+    color: #190909cc;
+    margin: 50px;	
+}
+
+.writeBtn {
+	display: inline-block;
+    margin-bottom: 30px;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 11px;
+    background-color: #4f96f2;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 172px;
+    right: 85px;
+}
+
+.registerForm {
+    width: 1024px;
+    margin: 30px auto;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+
+.registerForm form {
+    display: flex;
+    flex-direction: column;
+    width: 820px;
+    justify-content: center;
+    margin: 0 auto;
+    height: 509px;
+    font-family: 'JSDongkang-Regular';
+}
+
+
+.registerForm form input,
+.registerForm form textarea {
+	font-family: 'JSDongkang-Regular';
+	border: none;
+}
+
+.writeInfo {
+	width: 100%;
+    border: 1px solid #4e4e4e7a;
+    text-align: left;
+    margin: 0 auto;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.writeInfo.title{
+	padding: 0px 20px;
+    text-align: left;
+    font-size: 13px;
+    color: black;
+    height: 50px;
+}
+
+.registerForm textarea {
+	height: 225px;
+    margin-bottom: 30px;
+    border: 1px solid #4e4e4e7a;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+span.submitContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.registerSubmit {
+	background-color: #ff9a0edb;
+    color: white;
+    width: 53px;
+    text-align: center;
+    border: none;
+    font-size: 12px;
+    padding: 5px 0px;
+    border-radius: 10px;
+    margin: 0px 2px;
+}
+
+.backBtn {
+	background-color: #4f96f2;
+    color: white;
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 15px 0px;
+    border-radius: 10px;
+}
+
+
+#boardForm span{
+	margin: 7px;
+}
+
+#boardDeleteBtn {
+	background-color: #ff1c1cba;
+}
+
+header#mainsort {
+	width: 100%;
+    height: 75px;
+    border-bottom: 2px solid #222;
+}
+
+header.major > :last-child {
+    display: inline-block;
+}
+
+.page_navigation {
+    width: 1200px;
+    height: 50px;
+    margin: auto;
+    text-align: right;
+}
+
+ul.page_nav li {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+ul.page_nav li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+    background: none;
+}

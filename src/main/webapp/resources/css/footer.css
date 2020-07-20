@@ -1,0 +1,22 @@
+#footer {
+    position: relative;
+    width: 100%;
+    background: #333;
+    box-sizing: border-box;
+}
+
+.footer_block {
+    width: 100%;
+    padding: 40px 0 20px 0;
+    border-top: 1px solid #555;
+    margin-top: 90px;
+}
+
+.floating {
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    display: block;
+    margin-left: 640px;
+    width: 60px;
+}

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@font-face { font-family: 'JSDongkang-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+* {
+	box-sizing: border-box;
+}
+
+ul, li, div, section, p {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+} 
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+input {
+	border-radius: 6px;
+	border: none;
+	font-family: 'SDongkang-Regular';
+}
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+button {
+	cursor: pointer;
+	font-family: 'SDongkang-Regular';
+}
+
+textarea {
+	font-family: 'SDongkang-Regular';
+ 	resize: none;
+}
+
+.headerContainer div:first-child {
+	display: flex;
+    padding: 45px 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerContainer {
+	border-bottom: 1px solid #63636324;
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Jua', sans-serif;
+}
+
+#mainlogo {
+    width: 150px;
+    float: left;
+    margin-left: 10px;
+}
+
+#login, #signup {
+    box-shadow: none;
+    color: rgba(0, 142, 224, 0.75);
+    padding: 2px 13px;
+    background-color: white;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.header ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header li {
+	padding: 6px 23px;
+    font-size: 18px;
+    height: 65px;
+}
+
+.header li a {
+	color: #4d4d4d;
+	display: flex;
+    align-items: center;
+	height: 100%;
+}
+
+.header li:hover {
+    font-size: 19px;
+    border-bottom: 5px solid #1ebd25;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+nav {
+	border-top: 1px solid rgba(39, 43, 49, 0.11);
+    border-bottom: 1px solid rgba(39, 43, 49, 0);
+}
+
+.pageTitle{
+	font-size: 26px;
+    font-weight: 600;
+    color: #190909cc;
+    margin: 50px;	
+}
+
+.titleBox {
+	margin: 45px;
+}
+
+.title {
+	font-size: 35px;
+    font-weight: 600;
+    color: #0072ff;
+    height: 90px;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+  <insert id="join">
+  	insert into membershiptbl (name, id, pw, email, phone) values (#{name}, #{id}, #{pw}, #{email}, #{phone})
+   </insert>
+  
+  <select id="loginCheck"  resultType="kr.co.dto.MemberDTO" parameterType="kr.co.dto.MemberDTO">
+  	select id, name, pw, phone, grade from membershiptbl where id=#{id} and pw = #{pw}
+  </select>
+</mapper>
