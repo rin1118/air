@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="travelMapper">
+	
+   <!-- 호텔 리스트 select -->
+  <select id="write"  resultType="kr.co.dto.TravelStoryDTO">
+  	insert into travelstory (seq, title, name, content, id, preview) values ((select nvl(max(seq),0)+1 from travelstory), #{title}, #{name}, #{content}, #{id}, #{preview})
+  </select>
+
+	<select id="selectList"  resultType="kr.co.dto.TravelStoryDTO">
+		select seq, title, name, w_date, content, id, preview from travelstory
+ 	</select>
+ 	
+ 	<select id="selectOne"  resultType="kr.co.dto.TravelStoryDTO">
+		select seq, title, name, w_date, content, id from travelstory where seq = #{seq}
+ 	</select>
+ 	
+ 	<update id="update"  parameterType="kr.co.dto.TravelStoryDTO">
+		update travelstory set title = #{title}, content = #{content} where seq = #{seq}
+ 	</update>
+ 	
+ 	<delete id="delete">
+ 		delete from travelstory where seq = #{seq}
+ 	</delete>
+	
+
+</mapper>

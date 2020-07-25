@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+	
+	<!-- 게시글 총 갯수 -->
+	<select id="listCount" resultType="int">
+		select count(b_no) 
+		from board
+		where b_no > 0 
+	</select>
+	
+	<select id="listPage" resultType="kr.co.dto.BoardDTO"  parameterType="kr.co.dto.Criteria">
+		SELECT  B_NO, TITLE, CONTENT, WRITER, REGDATE
+		FROM ( 
+	        SELECT B_NO, 
+	               TITLE, 
+	               CONTENT, 
+	               WRITER, 
+	               REGDATE, 
+	               ROW_NUMBER() OVER(ORDER BY B_NO DESC) AS RNUM
+	         FROM BOARD 
+       		)
+		BOARD
+		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY b_no DESC
+	</select>
+	
+	<select id="getList" resultType="kr.co.dto.BoardDTO">
+   		select * from board order by b_no desc
+   </select>
+   
+   <select id="selectOne" resultType="kr.co.dto.BoardDTO">
+   		select * from board where b_no = #{b_no}
+   </select>
+
+   <insert id="insert">
+   	insert into board(	b_no, 
+   						title, 
+   						content, 
+   						writer)
+   				values((select nvl(max(b_no),0)+1 from board), 
+   								#{title}, 
+   								#{content}, 
+   								#{writer})
+   </insert>
+   
+   <update id="update" parameterType="kr.co.dto.BoardDTO">
+		UPDATE board
+		   SET TITLE = #{title},
+		   	   CONTENT = #{content}
+		 WHERE b_no = #{b_no} 
+	</update>
+	
+   
+   <delete id="delete">
+   		delete from board where b_no = #{b_no}
+   </delete>
+</mapper>

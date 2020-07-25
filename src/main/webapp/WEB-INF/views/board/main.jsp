@@ -14,16 +14,13 @@
 <section class="main">
 	<div class="page_navigation">
 		<ul class="page_nav">
-			<li><a href="/travelStory/writeView">글쓰기</a></li>
-			<li><a href="/travelStory/main">홈</a></li>
+			<li><a href="/board/write">글쓰기</a></li>
+			<li><a href="/board/main">홈</a></li>
 		</ul>
 	</div>
 	<header class="major" id="mainsort">
 		<h1>공지사항</h1>
 	</header>
-	<c:if test="${member.role == 'admin'}">
-		<a href="/board/write" class="writeBtn">작성</a>
-	</c:if>
 
 	<table class="listItem">
 		<tr>

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,8 +39,8 @@ input#save_button {
 	<div id="container">
 		<div class="page_navigation">
 			<ul class="page_nav">
-				<li><a href="storywrite.jsp">글쓰기</a></li>
-				<li><a href="../main.jsp">홈</a></li>
+				<li><a href="/travelStory/writeView">글쓰기</a></li>
+				<li><a href="/travelStory/main">홈</a></li>
 			</ul>
 		</div>
 
@@ -49,12 +48,7 @@ input#save_button {
 			<h3 class="tit_con_title">여행이야기</h3>
 			<!-- 주간인기 -->
 			<div class="best_review">
-				<form name="frm" id="frm" action="storyinsert.jsp" method="get">
-					<input type="text" name="title" placeholder="제목">
-					<textarea placeholer="내용"></textarea>
-					<input type="file">
-					<input type="submit" value="작성">
-				</form>
+				<%@include file="./editor_frame.jsp" %>	
 			</div>
 		</div>
 	</div>

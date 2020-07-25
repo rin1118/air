@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="ko" class="">
@@ -11,6 +13,13 @@ h1.tit_logo {
 
 .gnb_back {
 	margin-top: -20px;
+}
+
+ul.trv_story_list {
+    display: grid;
+    grid-template-columns: 285px 284px 284px 283px;
+    grid-template-rows: 305px 300px;
+    grid-gap: 21px;
 }
 </style>
 <meta charset="utf-8">
@@ -94,98 +103,21 @@ h1.tit_logo {
 				</div>
 
 				<!--게시물 내용-->
-				<form id="frm" action="/prom/contentsList.yb" method="GET">
-					<div id="contentsDiv">
-						<input type="hidden" name="ytripNo" id="ytripNo" value="">
-						<input type="hidden" name="pageNo" id="pageNo" value="1">
-						<input type="hidden" name="cateNo" id="cateNo" value="">
-						<input type="hidden" name="subDspMenu" id="subDspMenu" value="">
-						<input type="hidden" name="lastPage" id="lastPage" value="19">
-						<div class="story_list">
-
-						<ul class="trv_story_list">
-							<li>
-								<span class="thumb_pic">
-									<img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/MZ/201903/201903081127358911712012001097.jpg" alt="상품 이미지"></span>
-								<div class="story_list_info">
-									<a href="storycontent.jsp?seq=getNum">
-										<span class="ico_brd_tour">여행지정보</span>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">getTitle()/h5>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">작성자 : getName</h5>
-									</a>
-								</div>
-							</li>
-							<li>
-								<span class="thumb_pic">
-									<img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/MZ/201903/201903081127358911712012001097.jpg" alt="상품 이미지"></span>
-								<div class="story_list_info">
-									<a href="storycontent.jsp?seq=getNum">
-										<span class="ico_brd_tour">여행지정보</span>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">getTitle()/h5>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">작성자 : getName</h5>
-									</a>
-								</div>
-							</li>
-							<li>
-								<span class="thumb_pic">
-									<img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/MZ/201903/201903081127358911712012001097.jpg" alt="상품 이미지"></span>
-								<div class="story_list_info">
-									<a href="storycontent.jsp?seq=getNum">
-										<span class="ico_brd_tour">여행지정보</span>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">getTitle()/h5>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">작성자 : getName</h5>
-									</a>
-								</div>
-							</li>
-							<li>
-								<span class="thumb_pic">
-									<img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/MZ/201903/201903081127358911712012001097.jpg" alt="상품 이미지"></span>
-								<div class="story_list_info">
-									<a href="storycontent.jsp?seq=getNum">
-										<span class="ico_brd_tour">여행지정보</span>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">getTitle()/h5>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">작성자 : getName</h5>
-									</a>
-								</div>
-							</li>
-							<li>
-								<span class="thumb_pic">
-									<img src="https://cimgcdn.ybtour.co.kr/attachHome/YT/MZ/201903/201903081127358911712012001097.jpg" alt="상품 이미지"></span>
-								<div class="story_list_info">
-									<a href="storycontent.jsp?seq=getNum">
-										<span class="ico_brd_tour">여행지정보</span>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">getTitle()/h5>
-										<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">작성자 : getName</h5>
-									</a>
-								</div>
-							</li>
-						</ul>
-					</div>
-
-					<div id="paging" class="page">
-							<span class="btn_page_first disabled">
-								<span>맨처음</span>
-							</span>
-							<span class="btn_page_prev disabled">
-								<span>이전</span>
-							</span>
-							<a href="#none" class="on">1</a>
-							<a href="#none">2</a>
-							<a href="#none">3</a>
-							<a href="#none">4</a>
-							<a href="#none">5</a>
-							<a href="#none">6</a>
-							<a href="#none">7</a><a href="#none">8</a>
-							<a href="#none">9</a><a href="#none">10</a>
-							<a href="#none" class="btn_page_next">
-								<span>다음</span>
-							</a>
-							<a href="#none" class="btn_page_last">
-								<span>마지막</span>
-							</a>
-					</div>
-					</div>
-				</form>
+				<ul class="trv_story_list">
+					<c:forEach items="${list}" var="item">
+						<li>
+							<span class="thumb_pic">
+								<img src="${item.preview}" alt="이미지"></span>
+							<div class="story_list_info">
+								<span class="ico_brd_tour">여행지정보</span>
+								<a id="goDetail" href="/travelStory/detail?seq=${item.seq}" data-seq="${item.seq}">
+									<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">${item.title }
+								</a>
+									<h5 class="tit_list_block link_ellipsis multiline" style="white-space: normal; height: 48px;">작성자 : ${item.name }</h5>
+							</div>
+						</li>
+					</c:forEach>
+				</ul>
 			</div>
 		</div>
 
@@ -226,4 +158,5 @@ h1.tit_logo {
 	</div>
 </body>
 <script src="/js/biz/yb.user.js"></script>
+<script src="/resources/js/jquery.js"></script>
 </html>

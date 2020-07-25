@@ -53,6 +53,14 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
+	public String logout(Model model, HttpSession session) {
+		logger.info("로그아웃 처리");
+		
+		session.invalidate();
+
+		return "redirect:/";
+	}
 	
 	@RequestMapping(value = "/member/signUp", method = RequestMethod.GET)
 	public String signUpView(Model model) {
@@ -74,12 +82,5 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
-	public String logout(Model model, HttpSession session) {
-		logger.info("로그아웃 처리");
-		
-		session.invalidate();
 
-		return "redirect:/";
-	}
 }

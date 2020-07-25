@@ -26,7 +26,9 @@
 					</c:choose>
 					<c:if test="${!empty member}">
 							<span id="hello">${member.getId()}님 환영합니다!</span>
-							<a href="member/logout"><input type="button" value="로그아웃" id="logout"></a>
+							<a href="/member/logout">
+								<input type="button" value="로그아웃" id="logout">
+							</a>
 					</c:if>
 				</ul>
 		</div>
